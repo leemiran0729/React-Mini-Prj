@@ -1,0 +1,14 @@
+.movie-container {
+  width: 250px;
+  margin: 10px;
+}
+
+.movie-container img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.movie-info {
+  display: flex;
+  justify-content: space-between;
+}
