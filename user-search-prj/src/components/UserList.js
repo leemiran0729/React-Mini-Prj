@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-const UserList = ({ users }) => {
-  return (
+const UserList = ({ searchResults: users }) => {
+  return users.length > 0 ? (
     <ListContainer>
       <Table>
         <Thead>
@@ -38,6 +38,8 @@ const UserList = ({ users }) => {
         </Tbody>
       </Table>
     </ListContainer>
+  ) : (
+    <ListContainer>검색내용을 찾을 수 없습니다.</ListContainer>
   );
 };
 

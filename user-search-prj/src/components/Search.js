@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-const Search = ({ users, setUsers }) => {
-  const [name, setName] = useState("");
+const Search = ({ users, setSearchResults }) => {
+  const [searchedName, setSearchedName] = useState("");
 
   const handleChange = (e) => {
-    setName(e.target.value);
+    setSearchedName(e.target.value);
   };
 
-  const handleSearch = (e) => {
-    console.log(users);
+  const handleSearch = () => {
+    const searchedUsers = users.filter((user) => user.name === searchedName);
+    setSearchResults(searchedUsers);
   };
 
   return (
     <SearchContainer>
-      <Input type="text" value={name} onChange={handleChange} />
+      <Input type="text" value={searchedName} onChange={handleChange} />
       <Button onClick={handleSearch}>검색</Button>
     </SearchContainer>
   );
