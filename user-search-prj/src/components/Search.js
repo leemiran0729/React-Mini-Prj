@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-const Search = () => {
+const Search = ({ users, setUsers }) => {
   const [name, setName] = useState("");
 
   const handleChange = (e) => {
     setName(e.target.value);
   };
 
-  const handleSearch = (e) => {};
+  const handleSearch = (e) => {
+    console.log(users);
+  };
 
   return (
     <SearchContainer>
