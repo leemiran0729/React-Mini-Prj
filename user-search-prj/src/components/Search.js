@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const Search = () => {
+  const [name, setName] = useState("");
+
+  const handleChange = (e) => {
+    setName(e.target.value);
+  };
+
+  const handleSearch = (e) => {};
+
   return (
     <SearchContainer>
-      <Input type="text" />
-      <Button>검색</Button>
+      <Input type="text" value={name} onChange={handleChange} />
+      <Button onClick={handleSearch}>검색</Button>
     </SearchContainer>
   );
 };
