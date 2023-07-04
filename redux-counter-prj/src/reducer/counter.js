@@ -11,17 +11,13 @@ export const decreaseNum = () => {
   return { type: DECREASE };
 };
 
-const initialState = {
-  num: 0,
-};
-
-export default function counterReducer(state = initialState, action) {
+export default function counterReducer(state = 0, action) {
   switch (action.type) {
     case INCREASE:
-      return { ...state, num: state.num + 1 };
+      return state + 1;
     case DECREASE:
-      return { ...state, num: state.num - 1 };
+      return state - 1;
     default:
-      return { ...state };
+      return state;
   }
 }
